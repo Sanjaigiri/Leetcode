@@ -12,6 +12,7 @@ class Solution {
      
       if (root->left->left == nullptr && root->left->right == nullptr)
         ans += root->left->val;  
+        else
         ans += sumOfLeftLeaves(root->left);  
     }
 
