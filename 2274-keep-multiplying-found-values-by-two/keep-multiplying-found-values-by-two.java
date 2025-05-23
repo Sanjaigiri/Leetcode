@@ -1,11 +1,11 @@
 class Solution {
     public int findFinalValue(int[] nums, int original) {
-         Arrays.sort(nums);
-         for(int i=0 ; i < nums.length ; i++)
-         {
-            if(nums[i] == original)
-            original = original*2;
+        Arrays.sort(nums);
+        for(int a=0;a<nums.length;a++)
+        {
+           if(nums[a] == original)
+            original=original*2;
+        }  
+        return original; 
          }
-         return original;
-    }
 }
