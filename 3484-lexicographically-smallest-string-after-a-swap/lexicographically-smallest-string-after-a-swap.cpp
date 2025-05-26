@@ -1,19 +1,13 @@
 class Solution {
 public:
     string getSmallestString(string s) {
-        string ans = s;
-        for(int i = 0; i<s.size()-1; i++){
-            int a = s[i]-'0';
-            int b = s[i+1]-'0';
-
-            if((a%2 == 0 && b%2 == 0) || (a%2 == 1 && b%2 == 1)){
-                swap(s[i], s[i+1]);
-                if(s <= ans){
-                    ans = s;
-                }
-                swap(s[i], s[i+1]);
-            }
+         for (int i = 1; i < s.length(); ++i) {
+        // Check if both characters have the same ASCII parity (odd or even)
+        if ((s[i - 1] % 2 == s[i] % 2) && (s[i - 1] > s[i])) {
+            swap(s[i - 1], s[i]);  // Perform swap
+            break;                 // Only one swap allowed
         }
-        return ans;
+    }
+     return s;
     }
 };
